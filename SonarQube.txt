@@ -1,6 +1,6 @@
 1: Pull Image
     docker pull sonarqube
-2: docker run -d -p 9000:9000 --name sonarqube <sonarq
+2: docker run -d -p 9000:9000 --name sonarqube <sonarq or docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
 3: docker logs -f sonarqube     // to check container started or not
 4: go to localhost:9000
 5: login using admin admin
