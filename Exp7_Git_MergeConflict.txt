@@ -1,0 +1,64 @@
+7. Github VCS Merge conflicts, Commits
+    a. Clone a repository from GitHub to your local machine.
+    b. Create a new branch and push it to GitHub.
+    c. Pull changes from a remote repository.
+    d. Resolve a merge conflict.
+    e. Tag a specific commit.
+    f. Revert a specific commit.
+
+A: Clone a repository
+    git init
+    git clone <repository_URL>
+
+B: Create a new Branch 
+    git checkout -b <new_branch_name>
+    //Make some changes
+    git add .
+    git commit -m "Commit msg"
+    git push origin <new_branch_name>
+
+C: Pull changes
+    git pull origin <branch_name>
+
+D: Resolve Merge comflict
+    1: Create a merge conflict by making changes in master
+        branch and then trying to merge with new_branch using
+        command
+        git checkout master
+        //make changes
+        git add .
+        git commit -m 'msg'
+
+        //Merge with new_branch
+        git merge <new_branch_name>
+
+
+        //Error msg
+        Auto-merging file.txt
+        CONFLICT (content): Merge conflict in file.txt
+        Automatic merge failed; fix conflicts and then commit the result.
+
+        //Resolve the issue and then add and commit
+        
+        <<<<<<< HEAD
+        This is the change made in the main branch.
+        =======
+        This is the change made in the feature branch.
+        >>>>>>> feature_branch
+
+        git add file.txt
+        git commit -m "Resolved merge conflict"
+
+E: Tag a specific Commit
+    find the hash of specific command using
+    git log
+
+    git tag <tag-name> <commit-hash>
+    git push origin <tag-name>
+
+F: Revert a specific commit
+    git log
+    git revert <commit-hash>
+
+
+

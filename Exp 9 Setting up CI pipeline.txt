@@ -1,0 +1,46 @@
+A: Create a simple program (e.g., a &quot;Hello, World!&quot; application) in a
+   programming language of your choice.
+   
+    1: Create a python file and upload to a new GitHub repository
+    2: Download Java 11 (required)
+    3: Download Python  
+    4: Download and install Jenkins  from the link below
+        https://www.jenkins.io/download/
+        
+        select the first option while installing (not recomended one)
+        test port
+        go to localhost:8080
+        For administartive password open
+            C:\Program Files\Jenkins\jenkins.err.log file
+            and find key there like below
+
+            /*
+                Jenkins initial setup is required. An admin user has been created and a password generated.
+                Please use the following password to proceed to installation:
+                    
+                    a1c3f8db497145ff9e7b62784c3d7077
+            */
+
+        download default plugins
+
+        After completing above process
+
+        Install python plugin 
+            Dashboard-> manage jenkins ->manage plugins-> type python and download plugin
+            and install without restart 
+        
+        #Create new item 
+        Give name to Files
+
+        In Source Code Management:
+            Add git repository_URL
+
+        In Build Steps:
+         Select : Execute Windows batch command
+         and enter command -> C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\python.exe helloWorld.py
+         <path of python.exe file> fileName.py
+
+        Save and build and check log
+
+
+

@@ -1,0 +1,35 @@
+A: Set up remote repo
+    //Create a repo copy its URL  //Do not Clone 
+    git remote add origin <repository-url>
+
+B: Create a pull request
+    //First Create a branch and do some changes and commit
+    git push origin <branch-name>
+
+    Go to the remote repository on GitHub.
+    Click on the "Pull requests" tab.
+    Click on the "New pull request" button.
+    Select the base branch and the branch containing your changes.
+    Review the changes and provide a title and description for the pull request.
+    If everything looks good, click on the "Create pull request" button.
+
+C: Tag a commit
+    git log
+    git tag <tag-name> <commit-hash>
+    git push origin <tag-name>
+
+D: Revert A specific commit
+    git log
+    git revert <commit-hash>
+
+E: Squash multiple commit into one
+    git rebase -i <commit-hash>  // the commit must have few commits before it
+    
+    An editor will open with a list of commits. Replace pick with squash or s for the commits you want to squash into the previous commits.
+    Save and exit the editor.
+    Another editor will open, allowing you to modify the commit message for the new combined commit. Edit the message if desired.
+    Save and exit the editor.
+    The commits are now squashed into one new commit.
+
+F: Show commit history
+    git log

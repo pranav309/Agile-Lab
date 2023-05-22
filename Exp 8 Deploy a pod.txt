@@ -1,0 +1,16 @@
+1: Create a yaml file pod.yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: my-pod
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+
+2: Deploy a pod
+  kubectl apply -f pod.yaml
+3: Verify the pod 
+  kubectl get pods

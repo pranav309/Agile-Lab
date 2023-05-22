@@ -1,0 +1,32 @@
+1: Create a project in a folder 
+    (Here used a html css js web page)
+
+2: Write a dockerFile to build a image
+    # Use a lightweight web server as the base image
+    FROM nginx:alpine
+
+    # Copy the HTML and CSS files to the appropriate location in the container
+    COPY index.html /usr/share/nginx/html/
+    COPY style.css /usr/share/nginx/html/
+    COPY app.js /usr/share/nginx/html/
+
+    # Expose the default HTTP port
+    EXPOSE 80
+
+    # Start the Nginx web server when the container starts
+    CMD ["nginx", "-g", "daemon off;"]
+
+    //BUILD THE IMAGE
+3: docker build -t your-image-name:your-tag .
+
+    // RUN THE CONTAINER
+4: docker run -d -p 80:80 your-image-name:your-tag
+
+    //LOGIN TO DOCKER
+5: docker login
+
+    // TAG IMAGE
+6: docker tag calculator:1.0 your-dockerhub-username/calculator:1.0
+
+    //PUSH IMAGE TO DOCKERHUB
+7: docker push your-dockerhub-username/calculator:1.0

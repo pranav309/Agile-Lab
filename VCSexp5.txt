@@ -1,0 +1,14 @@
+// Create new Branch , switch to new branch add and commit files
+
+git branch new-branch
+git checkout new-branch
+git add .
+git commit -m "Made changes in the new branch"
+
+
+
+//Go to target branch and merge data of new branch to target branch
+
+git checkout target-branch
+git merge new-branch
+git commit -m "Merged new-branch into target-branch"

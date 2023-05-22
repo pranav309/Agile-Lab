@@ -1,0 +1,13 @@
+1: Pull Image
+    docker pull sonarqube
+2: docker run -d -p 9000:9000 --name sonarqube <sonarq
+3: docker logs -f sonarqube     // to check container started or not
+4: go to localhost:9000
+5: login using admin admin
+6: create new credentials
+7: create manual project and give name
+8: select locally
+9: generate token
+10:Select project type from "Run analysis on your project" section
+11:Download Sonar scanner from the documentation on screen
+12:Execute the given command in your project folder

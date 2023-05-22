@@ -1,0 +1,52 @@
+//For simple project
+
+pipeline {
+    agent any
+    
+    stages {
+        
+        stage('Checkout') {
+            steps {
+                git branch: 'master', url: 'https://github.com/bhushan0110/jenkinsCICD.git/'
+            }
+        }
+        
+        stage('Run') {
+            steps {
+                bat 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\python.exe helloWorld.py'
+            }
+        }
+        
+    }
+}
+
+
+//To build docker image
+
+pipeline {
+    agent any
+    
+    stages {
+        
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/bhushan0110/webJSBasics.git/'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                bat 'docker build -t bhushan722/dice .'
+            }
+        }
+        
+        stage('Push') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'Bhushan', passwordVariable: 'Bhushan@9876', usernameVariable: 'bhushan722')]) {
+                    bat 'docker login -u bhushan722 -p Bhushan@9876'
+                    bat 'docker push bhushan722/dice'
+                }
+            }
+        }
+    }
+}
